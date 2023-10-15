@@ -27,7 +27,5 @@
       "prettier --write"
     ]
   },
-  "dependencies": {
-    "commitlint": "^17.8.0"
-  }
+  "dependencies": {}
 }
