@@ -1,15 +1,4 @@
 {
-  "devDependencies": {
-    "@commitlint/cli": "^17.8.0",
-    "@commitlint/config-conventional": "^17.8.0",
-    "eslint": "^7.32.0 || ^8.2.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-import": "^2.25.2",
-    "husky": "^8.0.0",
-    "lint-staged": "^15.0.1",
-    "prettier": "^3.0.3"
-  },
   "name": "fireship-io",
   "version": "1.0.0",
   "main": "index.js",
@@ -26,6 +15,17 @@
     "*.{json,js,ts,jsx,tsx,html}": [
       "prettier --write"
     ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.8.0",
+    "@commitlint/config-conventional": "^17.8.0",
+    "eslint": "^7.32.0 || ^8.2.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.0.1",
+    "prettier": "^3.0.3"
   },
   "dependencies": {}
 }
