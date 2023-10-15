@@ -1,0 +1,28 @@
+{
+  "devDependencies": {
+    "@commitlint/cli": "^17.8.0",
+    "@commitlint/config-conventional": "^17.8.0",
+    "eslint": "^8.51.0",
+    "eslint-config-prettier": "^9.0.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.0.1",
+    "prettier": "^3.0.3"
+  },
+  "name": "fireship-io",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@dgit:evanmarshall-dev/fireship-io.git",
+  "author": "evanmarshall-dev <me@evanmarshall.dev>",
+  "license": "MIT",
+  "scripts": {
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{js, jsx,ts,tsx}": [
+      "eslint --quiet --fix"
+    ],
+    "*.{json,js,ts,jsx,tsx,html}": [
+      "prettier --write --ignore-unknown"
+    ]
+  }
+}
