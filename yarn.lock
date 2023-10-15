@@ -621,6 +621,14 @@ commander@11.1.0:
   resolved "https://registry.yarnpkg.com/commander/-/commander-11.1.0.tgz#62fdce76006a68e5c1ab3314dc92e800eb83d906"
   integrity sha512-yPVavfyCcRhmorC7rWlkHn15b4wDVgVmBA7kV4QVBsF7kv/9TKJAbAXVTxvTnwP8HHKjRCJDClKbciiYS7p0DQ==
 
+commitlint@^17.8.0:
+  version "17.8.0"
+  resolved "https://registry.yarnpkg.com/commitlint/-/commitlint-17.8.0.tgz#510ec00d7ff35601885fda7fd5acdfe58e290755"
+  integrity sha512-xo0F0n4/W4Yq1BAmyICA+1ivPzILAPBQ/fx2PAn5uUQwzTXMdN8URE3P4YzMl6ey/1mRa6NsnW5yV9HJd5NMmA==
+  dependencies:
+    "@commitlint/cli" "^17.8.0"
+    "@commitlint/types" "^17.4.4"
+
 compare-func@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/compare-func/-/compare-func-2.0.0.tgz#fb65e75edbddfd2e568554e8b5b05fff7a51fcb3"

@@ -26,5 +26,8 @@
     "*.{json,js,ts,jsx,tsx,html}": [
       "prettier --write"
     ]
+  },
+  "dependencies": {
+    "commitlint": "^17.8.0"
   }
 }
