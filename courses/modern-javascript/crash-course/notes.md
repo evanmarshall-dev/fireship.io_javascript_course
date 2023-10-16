@@ -38,4 +38,26 @@ The easiest way to define an object is with an _**object literal**_. You can do 
 
 ### Object Oriented Programming (OOP)
 
-OOP has a _**class**_ keyword, however classes are simply syntactic sugar for protypal inheritance and objects. A class can define a _**constructor**_ which is a function which is called when the object is first created. It can also have properties and optionally create _**getters**_ and _**setters**_ to access the properties.
+OOP has a _**class**_ keyword, however classes are simply syntactic sugar for prototype inheritance and objects. A class can define a _**constructor**_ which is a function which is called when the object is first created. It can also have properties and optionally create _**getters**_ and _**setters**_ to access the properties. It better encapsulates functions by organizing them as methods on an object _**instance method**_ or make them global to the class name with the _**static method**_.
+
+### Built in JS Data Structures
+
+- _**Array, Set and Map**_: Array holds a dynamic collection of indexed items. A set is a collection of unique items. A map also holds key:value pairs like an object, but can be more easily looped over plus many other features. JS is a _**Garbage Collection**_ which means JS will automatically de-allocate objects from memory when they are no longer referenced in the code. However, when you have a map all of the properties will ALWAYS be referenced. If that is a problem there is a _**WeakMap**_ and _**WeakSet**_ which contain properties which can be garbage collected to limit memory usage.
+
+### Non-Blocking Event Loop (An interesting feature)
+
+Normally when you run scripts it is run _**synchronously**_ or line-by-line and the next line cannot start until the previous line finishes. With an _**event loop**_ we can write _**asynchronous**_ (async) JS which runs in a separate THREAD POOL, while the rest of the application continues to execute. This is important because web apps tend to have multiple things going at the same time, but they only have access to a SINGLE thread for computing called the _**main thread**_. Without async code it would be impossible to multi-task. This can be demonstrated in the code with setTimeout(). This function allows us to delay running code for a specified amount of time. It is called a **_callback function_**. Callback functions get enqueued in the event loop until it is called back later to be executed in the main thread. Callbacks are great, but when they become too complex and several levels nested it can create **_callback hell_**.
+
+A _**Promise**_ allows us to write more efficient async code. A promise is a wrapper for a value which is unknown now, but that will _**resolve**_ to a value in the future. For example giving a call to a 3rd party API that resolves to some data. The second part of a promise is the _**reject**_ which generates an error if something goes wrong. The consumer of the promise can use methods such as _**then/catch**_ to handle these two possible outcomes. A BETTER option is to define an async function that will automatically return a promise. In the body of the function we can pause its execution using the _**await**_ keyword. In order to handle errors with async/await functions you need to wrap it in a _**try/catch**_ block.
+
+### ES Modules
+
+As you code grows in complexity, you will not be able to maintain it in one file. **_ES MODULES_** allows you to share code between files. By default, all of the code in a file is private to said file however if there is code we want to use elsewhere we can use a **_default export_**. This allows us to use an import statement in another file to use the code in that file, too. You can also export several pieces of code (i.e. functions) from one file and import them by name in another. This is called _**named exports**_.
+
+### Package Managers
+
+A lot of times you will use code written by another developer. This is done by using a package manager. The largest development package manager is _**Node Package Manager**_ (npm). Any packages installed from npm puts it's code into the _**node_modules**_ folder of your project and also provides a _**package.json**_ that will list out all of your dependencies in your project.
+
+### Document Object Model (DOM)
+
+On the web code will run in the browser, which is based on the DOM where the UI is represented as a tree of HTML elements or _**nodes**_. The browser provides an API to interact with these nodes with the most important object being the _**document**_. The document allows us to grab an individual HTML element using the method called _**query selector**_. The query selector takes a CSS selector as an argument and it will find the HTML element which has the same class name, id or tag name. It returns an instance of the _**element**_ class, which itself has a variety of properties and methods which will get you info about it or change it's behaviour. You can grab multiple elements using **_querySelectorAll_**. We can also _**listen**_ to events that happen to it, such as a button click.

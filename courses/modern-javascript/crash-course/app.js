@@ -1,3 +1,35 @@
+// Demonstrate Promise.
+// ? const promise = new Promise((resolve, reject) => {
+// Do something async here.
+//   ? if (greatSuccess) {
+//     ? resolve('success');
+//   ? } else {
+//     ? reject('failure');
+//   ? }
+// ? });
+// Then/Catch
+// ? promise
+
+//   ? .then((success) => {
+//     ? console.log('Yay!', success);
+//    ? })
+
+//   ? .catch((err) => {
+//     ? console.log('Boo!', err);
+//   ? });
+// Async/Await
+// ? async function asyncFun() {
+//   ? try {
+//     ? const result = await promise;
+//   ? } catch (error) {
+//     ? console.log(err);
+//   ? }
+// ? }
+
+// Imports
+// ? import helpfulFun from './help.js';
+// ? import { a, b, c } from './help.js';
+
 console.log('Hello World!');
 
 // Common way to define a variable is called LET.
@@ -79,18 +111,49 @@ luckyNum = 'twenty-three';
 // Prototype Chain
 // ? human.__proto__.__proto__; // Object.prototype
 // constructor, properties and getter/setter
-class Human {
-  constructor(name) {
-    this.dna = 'ATCG';
-    this.name = name;
-  }
+// ? class Human {
+//   ? constructor(name) {
+//     ? this.dna = 'ATCG';
+//     ? this.name = name;
+//   ? }
 
-  get gender() {
-    return this.gender;
-  }
+//   ? get gender() {
+//     ? return this.gender;
+//   ? }
 
-  set gender(val) {
-    this.gender = val;
-  }
-}
-console.log(Human);
+//   ? set gender(val) {
+//     ? this.gender = val;
+//   ? }
+
+// Instance method
+//   ? walk() {
+//     ? console.log("I'm walking!");
+//   ? }
+
+//   ? static isHuman(human) {
+//     ? if(human.dna === 'ATCG') {
+//       ? return true;
+//     ? }
+//   ? }
+// ? }
+// ? console.log(Human);
+// Array
+// ? const list = ['foo', 'bar', 'baz'];
+// A set is a collection of unique values.
+// ? const uniqueList = new Set(list);
+// A map is a collection of key-value pairs.
+// ? const dict = new Map([
+//   ? ['foo', 1],
+//   ? ['bar', 2],
+//   ? ['baz', 3]
+// ? ]);
+// WeakMap and WeakSet
+// ? const weakDict = new WeakMap([
+//   ? ['foo', 1],
+//   ? ['bar', 2],
+//   ? ['baz', 3]
+// ? ]);
+// Demonstrate Async Code. SetTimeout allows us to delay running of code for a specified amount of time.
+setTimeout(() => {
+  console.log('5 Seconds in the Future');
+}, 5000);
