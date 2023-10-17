@@ -157,3 +157,10 @@ luckyNum = 'twenty-three';
 setTimeout(() => {
   console.log('5 Seconds in the Future');
 }, 5000);
+// Event Listener
+const button = document.querySelector('.button');
+button.addEventListener('click', () => {
+  console.log('Clicked!');
+
+  document.body.style.backgroundColor = 'red';
+});
