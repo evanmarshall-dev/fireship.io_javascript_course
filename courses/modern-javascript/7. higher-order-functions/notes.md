@@ -66,3 +66,22 @@ function funCreator() {
 const fn = creator();
 fn('hello!');
 ```
+
+### Supplemental Course Notes (from site)
+
+A higher order function is a function that takes a function as an argument, or returns a function. They are commonly used in functional programming, and are a powerful tool for abstracting away complexity.
+
+```javascript
+// A function that takes a function as an argument
+function add(x, y) {
+  return x + y;
+}
+function subtract(x, y) {
+  return x - y;
+}
+function math(x, y, operator) {
+  return operator(x, y);
+}
+
+math(5, 2, add); // 7
+```

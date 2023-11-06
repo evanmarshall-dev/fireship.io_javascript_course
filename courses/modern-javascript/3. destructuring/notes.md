@@ -30,3 +30,27 @@ const [, , c] = arr;
 // If you do not want to have each position in the array as a variable you can leave position blank and separate by commas or if you are only using one position you can do as below.
 const c = arr[2];
 ```
+
+### Supplemental Course Notes (from site)
+
+Destructuring Examples:
+
+```javascript
+// Object destructuring
+const person = {
+  name: 'John',
+  age: 32,
+  city: 'New York',
+  country: 'USA'
+};
+
+const { name, age } = person;
+
+// Object destructuring with alias
+
+const { name: firstName, age: years } = person;
+
+// Array destructuring
+const fruits = ['apple', 'banana', 'orange'];
+const [first, second, third] = fruits;
+```

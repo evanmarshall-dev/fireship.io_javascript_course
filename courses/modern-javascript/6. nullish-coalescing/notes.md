@@ -42,3 +42,15 @@ const val = x || 'default';
 // However, JS introduced the nullish coalescing operator (??), which has a more limited set of values that evaluate to falsy. When used only null and undefined are considered falsy values. This provides more predictable behaviour than the OR (||) operator.
 const val = x ?? 'default';
 ```
+
+### Supplemental Course Notes (from site)
+
+Nullish coalescing is a relatively new operator that was introduced in ES2020. It is similar to the logical OR operator `||`, but it only returns the right-hand side if the left-hand side is `null` or `undefined`.
+
+```javascript
+const foo = null ?? 'bar';
+console.log(foo); // 'bar'
+
+const foo = 0 ?? 'bar';
+console.log(foo); // 0
+```
