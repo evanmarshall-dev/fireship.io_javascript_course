@@ -13,3 +13,7 @@ Thinking of algorithm complexity the above method would be **_O(N) Time Complexi
 A. Binary Search offers a more efficient approach.
 
 Analogous to looking for something with "J" in the dictionary. You would not start at the beginning and read through until you got there. You would open in the middle and if you over-shoot you would go back to J. And vise versa for if you under-shoot.
+
+### Supplemental Course Notes (from site)
+
+Binary search is a faster way to find an item in a sorted array with O(log n) time complexity, compared to a regular loop with O(n) time complexity.

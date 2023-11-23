@@ -12,7 +12,7 @@
 
 // Binary Search.
 // Default values set for start and end parameters so that we start at index 0 and end at the last index of the array.
-export default function search(arr, target, start = 0, end = arr.length - 1) {
+function search(arr, target, start = 0, end = arr.length - 1) {
   console.log(start, end);
 
   // Conditional for if start is greater than end then the value has not been found. It means it searched through the entire array and did not find the value.
@@ -33,9 +33,20 @@ export default function search(arr, target, start = 0, end = arr.length - 1) {
     return middle;
   }
   // 2. The middle index can be greater than the target.
-  // ? if (arr[middle] > target) {
-  // ? }
+  // Make this recursive by calling the search function again and passing in the new start and end values.
+  // Middle-1 is the element adjacent to the current middle value, which has the effect of slicing the search area in half.
+  if (arr[middle] > target) {
+    return search(arr, target, start, middle - 1);
+  }
   // 3. The middle index can be less than the target.
-  // ? if (arr[middle] < target) {
-  // ? }
+  // Also search via recursive function call but this time we pass in the middle + 1 as the new start value.
+  // Middle+1 also slices array in half, but on the right side.
+  if (arr[middle] < target) {
+    return search(arr, target, middle + 1, end);
+  }
 }
+
+const arr = ['a', 'b', 'c', 'x', 'y', 'z'];
+console.log(search(arr, 'b'));
+
+// Create an array with some strings then call the function to inspect it. Do this using node by typing in the console node bs.js.
