@@ -1,7 +1,7 @@
 // ? const sum = [1, 3, 5, 7].forEach();
 // ?const sum = [1, 3, 5, 7].reduce((acc, curr) => acc + curr, 0);
 // Different approach to the above, but it uses a custom fxn called sum that takes a array as an argument.
-function sum(arr) {
+export default function sum(arr) {
   // We need a variable to store the total.
   let total = 0;
   // Setup traditional for loop. Variable i starts at zero, the loop will iterate as long as i is less than the length of the array, and for each iteration we will increment i by 1.

@@ -12,7 +12,7 @@
 
 // Binary Search.
 // Default values set for start and end parameters so that we start at index 0 and end at the last index of the array.
-function search(arr, target, start = 0, end = arr.length - 1) {
+export default function search(arr, target, start = 0, end = arr.length - 1) {
   console.log(start, end);
 
   // Conditional for if start is greater than end then the value has not been found. It means it searched through the entire array and did not find the value.

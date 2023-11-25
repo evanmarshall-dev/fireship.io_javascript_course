@@ -8,7 +8,7 @@
 // ? LRU.prototype.getItem = function (key) {};
 
 // Now for using a CLASS.
-class LRU {
+export default class LRU {
   // Inside the class we will define a constructor function, which is like a function that gets called when a new object is initialized.
   // We will give the constructor function a parameter of capacity, which is a number which defines how long the cache can get (i.e. It might store a max of 10 items). The THIS keyword sets it as a property on the object.
   constructor(capacity) {
