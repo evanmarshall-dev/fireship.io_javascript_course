@@ -26,21 +26,29 @@ app.use(express.json());
 
 // Async keyword is used in the callback function in order to make it an async function.
 app.post('/dream', async (req, res) => {
-  // Access the prompt of the description of the image that the user wants to generate.
-  const { prompt } = req.body;
-  // Take the above user data and pass it off to the openai API, call the createImage method and pass in the prompt as an argument.
-  // Using await on this cause will pause the execution of the function until the API call is complete.
-  const aiResponse = await openai.createImage({
-    prompt,
-    // Also has argument for the number of images you want generated.
-    n: 1,
-    // Also an argument for the resolution.
-    size: '1024x1024'
-  });
-  // Once the API call is complete we will get a response object tht contains the image URL.
-  const image = aiResponse.data.data[0].url;
-  // Now that we have the URL available we need to send it back to the client (front end or browser) as a response. We do that by calling the send method on the response object. The client or browser will then receive this info as JSON.
-  res.send({ image });
+  try {
+    // Access the prompt of the description of the image that the user wants to generate.
+    const { prompt } = req.body;
+
+    // Take the above user data and pass it off to the openai API, call the createImage method and pass in the prompt as an argument.
+    // Using await on this cause will pause the execution of the function until the API call is complete.
+    const aiResponse = await openai.images.generate({
+      prompt,
+      // Also has argument for the number of images you want generated.
+      n: 1,
+      // Also an argument for the resolution.
+      size: '1024x1024'
+    });
+
+    // Once the API call is complete we will get a response object tht contains the image URL.
+    const image = aiResponse.data[0].url;
+    // Now that we have the URL available we need to send it back to the client (front end or browser) as a response. We do that by calling the send method on the response object. The client or browser will then receive this info as JSON.
+    res.send({ image });
+  } catch (error) {
+    console.error(error);
+    // Using optional chaining with ? to grab the response data and the error message otherwise || something went wrong.
+    res.status(500).send(error?.response.data.error.message || 'Something went wrong');
+  }
 });
 
 // Now we need to fire up the server, by calling app.listen followed by the port number.

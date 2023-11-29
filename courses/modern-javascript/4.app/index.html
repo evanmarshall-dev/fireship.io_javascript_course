@@ -2,12 +2,25 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
   </head>
   <body>
-    <div id="app"></div>
+    <main>
+      <h1>AI Photo Generator</h1>
+      <!-- The resulting image will appear here. -->
+      <div id="result">Image will appear here</div>
+      <!-- Text area is where the user will type in their prompt. -->
+      <form>
+        <label for="prompt">Prompt</label>
+        <textarea name="prompt" id="prompt" maxlength="160"></textarea>
+        <!-- The button with type submit will submit the form to the server. -->
+        <button type="submit">Dream</button>
+      </form>
+    </main>
+    <!-- Always keep the main script at the bottom of the body so that it runs after the HTML. -->
     <script type="module" src="/main.js"></script>
   </body>
 </html>
+<!-- ! Running yarn run dev launches the Vite app, running yarn run build packages the app for hosting. -->
